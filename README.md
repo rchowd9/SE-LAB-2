@@ -114,9 +114,38 @@ InheritanceSortedIntList --|> SortedIntList
 DelegationSortedIntList *-- SortedIntList
 ```
 
+```mermaid
+classDiagram
 
+%% --- Composition ---
+class "Composition Example" as CompNote {
+  (filled diamond)
+}
+class ClassA
+class ClassB
+ClassA "1" *-- "1" ClassB : composition
+CompNote .. ClassA
 
+%% --- Generalization ---
+class "Generalization (extends)" as GenNote {
+  (inheritance)
+}
+class BaseClass
+class DerivedClass
+DerivedClass --|> BaseClass : generalization
+GenNote .. DerivedClass
 
+%% --- Realization ---
+class "Realization (implements)" as RealNote {
+  (dashed + hollow triangle)
+}
+class SomeClass
+class SomeInterface {
+  <<interface>>
+}
+SomeClass ..|> SomeInterface : realization
+RealNote .. SomeClass
+```
 
 
 
